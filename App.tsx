@@ -9,13 +9,17 @@
  */
 
 import React from 'react';
-import Animation from './src/Basics';
+import Demoanimation from './src/Animations/demo1';
+import Animation from './src/Basics/Example1';
+import BesicAnimation from './src/Basics/Example2';
+import HendlingGestures from './src/Basics/HendlingGestures';
+import BesicInterpolation from './src/Basics/interpolation';
 
 
 const App = () => {
 
   return (
-    <Animation />
+    <HendlingGestures />
    
   );
 };
