@@ -57,7 +57,7 @@ const HendlingGestures = () => {
             alignItems: "center",
         }} >
             <Animated.View
-                onTouchStart={runAnimationOnClick}
+                // onTouchStart={runAnimationOnClick}
                 {...pan.panHandlers}
 
                 style={{

@@ -14,12 +14,13 @@ import Animation from './src/Basics/Example1';
 import BesicAnimation from './src/Basics/Example2';
 import HendlingGestures from './src/Basics/HendlingGestures';
 import BesicInterpolation from './src/Basics/interpolation';
+import MaskedTextInput from './src/DemoContant/MaskedTextinpute';
 
 
 const App = () => {
 
   return (
-    <HendlingGestures />
+    <MaskedTextInput />
    
   );
 };
