@@ -1,46 +1,54 @@
 import React, { useState } from "react";
-import {  StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
 const MaskedTextInput = () => {
 
-    const [inputText, SetinputText] = useState("")
+  
+    const handleTextChange = (value: any) => {
+        if (!value) return '';
+        value = value.replace(/[^\d]+/g, '');
 
+        let month = value.substring(0, 2)
 
-    const handleTextChange = (text: any) => {
-
-        if (!text) {
-            return ''
-        }
-        else{
-
-        text = text.replace(/([A-Z])\w+/g, "")
-
-        let month = text.substring(0, 2)
-
-        let day = text.substring(3, 5)
+        let day = value.substring(2, 4)
 
         let MM = month
         let DD = day
 
-        let DInM= new Date(0, MM, 0).getDate()
+        let DInM = new Date(0, MM, 0).getDate()
+
+
+        if (MM[0] > 1 && MM[0] < 10) {
+            MM = "0".concat(MM[0])
+        }
 
         if (MM > 12) {
             MM = 12
         }
-        if (MM=="00"){
-            MM="01"
+        if (MM == "00") {
+            MM = 0 + "1"
         }
-        
-        if (DD == "00") { 
-            day = "01"
+
+        if (DD == "00") {
+            DD = "01"
         }
-        if(DD>DInM){
+        if (DD > DInM) {
             DD = DInM
         }
 
-        const data = MM +  (text.length > 1 ? '/' : '') + (DD==DInM? DD:day)
-        return data 
-    }
+
+        return (
+            MM +
+              (value.length > 2 ? '/' : '') +
+            DD
+        );
+    };
+
+    const [newdata, setnewdata] = useState("")
+
+
+    const changehandler = (text: string) => {
+        setnewdata(handleTextChange(text))
     }
 
 
@@ -49,9 +57,10 @@ const MaskedTextInput = () => {
 
             <TextInput
                 style={styles.input}
+                maxLength={5}
                 placeholder="MM/DD"
-                value={inputText}
-                onChangeText={(text: any) => SetinputText(handleTextChange(text))}
+                value={newdata}
+                onChangeText={(text: string) => {changehandler(text)}}
             />
         </View>
     )
