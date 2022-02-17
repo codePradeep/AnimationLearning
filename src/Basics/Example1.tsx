@@ -21,34 +21,38 @@
  
  
  const Animation = () => {
-  //  const spinValue = new Animated.Value(0)
-  const spinValue = useRef(
-    new Animated.Value(0)
-  ).current;
-  
+   const spinValue = new Animated.Value(0)
+  // const spinValue = useRef(new Animated.Value(0)).current;
    const spin = spinValue.interpolate({  
-    inputRange: [0, 1],  
-    outputRange: ['0deg', '360deg']  
+    inputRange: [0,100,200],  
+    outputRange: ['0deg', '90deg','360deg']  
 })
 
 
+
 useEffect(() => {
-  Animated.spring(spinValue, {
+  Animated.timing(spinValue, {
     toValue: 200,
-    delay:600,
-    friction:1,
+    duration:4000,
+    // delay:600,
+    // friction:1,
     // tension:89,
     // easing: Easing.linear,
     useNativeDriver: true,
   }).start()
    
+
   
 }, []);
- 
+
+//  const getsping=()=>{
+   setInterval(()=>{
+     console.log(spin)
+   },5000)
+//  }
  
    return (
      <SafeAreaView >
-       <StatusBar barStyle={'light-content' } />
        <ScrollView
          contentInsetAdjustmentBehavior="automatic"
         

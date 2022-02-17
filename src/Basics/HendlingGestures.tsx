@@ -4,6 +4,8 @@ import { Animated, Button, View, Text, PanResponder } from 'react-native';
 const HendlingGestures = () => {
 
     const position = new Animated.ValueXY({ x: 0, y: 0 })
+    const position_new = new Animated.Value(0)
+
 
     //   Animated.timing(position, {
     //       toValue:{x:200,y:500},
@@ -16,9 +18,10 @@ const HendlingGestures = () => {
     const pan = PanResponder.create({
         onMoveShouldSetPanResponder: () => true,
         onPanResponderMove: (e, gesture) => {
+            console.log(gesture.dx,gesture.dy)
             position.setValue({ x: gesture.dx, y: gesture.dy })
         },
-
+ 
         // Animated.event([null,
         //     { dx: position.x, dy: position.y }
         // ]),
