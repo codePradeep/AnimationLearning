@@ -6,6 +6,7 @@ const MaskedTextInput = () => {
   
     const handleTextChange = (value: any) => {
         if (!value) return '';
+
         value = value.replace(/[^\d]+/g, '');
 
         let month = value.substring(0, 2)
@@ -29,13 +30,16 @@ const MaskedTextInput = () => {
             MM = 0 + "1"
         }
 
+        if (DD[0] > 3 && DD[0] < 10) {
+            DD = "0".concat(DD[0])
+        }
+
         if (DD == "00") {
             DD = "01"
         }
         if (DD > DInM) {
             DD = DInM
         }
-
 
         return (
             MM +
