@@ -4,7 +4,7 @@ import { Animated, Button, View, Text, PanResponder } from 'react-native';
 const HendlingGestures = () => {
 
     const position = new Animated.ValueXY({ x: 0, y: 0 })
-    const position_new = new Animated.Value(0)
+    // const position_new = new Animated.Value(0)
 
 
     //   Animated.timing(position, {

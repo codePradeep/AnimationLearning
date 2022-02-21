@@ -1,12 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
 
  import React, { useEffect, useRef } from 'react';
  import {
@@ -22,10 +13,12 @@
  
  const Animation = () => {
    const spinValue = new Animated.Value(0)
+
   // const spinValue = useRef(new Animated.Value(0)).current;
+
    const spin = spinValue.interpolate({  
-    inputRange: [0,100,200],  
-    outputRange: ['0deg', '90deg','360deg']  
+    inputRange: [0,1],  
+    outputRange: ['0deg','360deg']  
 })
 
 
