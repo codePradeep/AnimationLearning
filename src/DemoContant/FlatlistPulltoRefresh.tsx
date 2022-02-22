@@ -1,11 +1,5 @@
+import React, { useState, useEffect, useCallback } from 'react';
 
-//React Native Swipe Down to Refresh List View Using Refresh Control
-//https://aboutreact.com/react-native-swipe-down-to-refresh-listview-using-refreshcontrol/
-
-//import React in our code
-import React, { useState, useEffect } from 'react';
-
-//import all the components we are going to use
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,16 +10,60 @@ import {
   RefreshControl,
   Alert,
   Animated,
+  PanResponder,
 } from 'react-native';
 
+
 const FlatlistPulltoRefresh = () => {
+
+  
   const [refreshing, setRefreshing] = useState(false);
   const [dataSource, setDataSource] = useState([]);
   let [page,setpage]=useState(1)
+  const position = new Animated.Value(0)
+  const hight =new Animated.Value(140)
+
+  
+    const [loading, setLoading] = useState(false);
+  
+    const loadMore = useCallback(async () => {
+      setLoading(true);
+  
+      delay(15000).then(() => setLoading(false));
+    }, [loading]);
+
+    const delay=(timeout: any) =>{
+      return new Promise(resolve => {
+        setTimeout(resolve, timeout);
+      });
+    }
+   
+  
 
   useEffect(() => {
     getData(page);
   }, []);
+ 
+
+      const pan = PanResponder.create({
+        onMoveShouldSetPanResponder: () => true,
+        onPanResponderMove: (e, gesture) => {
+            console.log("gesture",gesture.dy)
+            position.setValue( gesture.dy )
+            if(gesture.dy>140){
+              loadMore()
+            }
+          
+        },
+ 
+        onPanResponderRelease: () => {
+
+            Animated.spring(position, {
+                toValue: 0,
+                useNativeDriver: true
+            }).start()
+        }
+    })
 
   const getData = ({page}:any) => {
     //Service to get the data from the server to render
@@ -80,53 +118,62 @@ const FlatlistPulltoRefresh = () => {
   };
 
 
-
   
   function onScroll(event:any) {
     const { nativeEvent } = event;
     const { contentOffset } = nativeEvent;
     const { y } = contentOffset;
-    console.log(y)
+    console.log("onscroll=>",y)
   }
 
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.container}>
-        {refreshing ?
-        
-        <View
-        style={{backgroundColor:"blue"}}> 
-        <Text>Loading</Text>
-        {/* <ActivityIndicator /> */}
-         </View> : null}
+    <SafeAreaView style={{ flex: 1 ,}}>
+    
 
-         <Animated.View style={{
-             height: 100,
-            //  position: 'absolute',
-             top: 5,
+         <View style={{
+           
+           backgroundColor:"blue",
+             flex:1,
+            // position: 'absolute',
+            zIndex:77,
+            elevation:66,
+             top: 0,
              left: 0,
              right: 0,
+             justifyContent:"center",
+             alignItems:"center"
          }}>
+          {loading? <Text style={{color:"white",fontSize:33}}>Pradeep Sharma</Text>:null }
 
-         </Animated.View>
+         
+         <Animated.View
+         {...pan.panHandlers}
+         style={{flex:1, backgroundColor:"white", transform: [
+           
+           {translateY:position },
+         ]}}>
         <Animated.FlatList
+         
           data={dataSource}
           keyExtractor={(item, index) => index.toString()}
           ItemSeparatorComponent={ItemSeparatorView}
-          //enableEmptySections={true}
+          pinchGestureEnabled={true}
+          scrollToOverflowEnabled={true}
           onEndReached={()=>handleLoadMore()}
           renderItem={ItemView}
           onScroll={onScroll}
-        //   refreshControl={
-        //     <RefreshControl
-        //       //refresh control used for the Pull to Refresh
-        //       refreshing={refreshing}
-        //       onRefresh={onRefresh}
-        //     />
-        //   }
+          // refreshControl={
+          //   <RefreshControl
+          //     //refresh control used for the Pull to Refresh
+          //      refreshing={refreshing}
+          //     // onRefresh={onRefresh}
+          //   />
+          // }
         />
-      </View>
+        </Animated.View>
+        </View>
+      
     </SafeAreaView>
   );
 };

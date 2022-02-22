@@ -16,15 +16,17 @@ import HendlingGestures from './src/Basics/HendlingGestures';
 import BesicInterpolation from './src/Basics/interpolation';
 import FlatlistPulltoRefresh from './src/DemoContant/FlatlistPulltoRefresh';
 import MaskedTextInput from './src/DemoContant/MaskedTextinput';
-import Pulltorefresh from './src/DemoContant/Pulltorefefresh';
 import BesicSequenceAnimation from './src/Basics/Sequence';
 import BesicDecayAnimation from './src/Basics/Decay';
+import PulltoRefresh from './src/DemoContant/Pulltorefresh';
+import OnboardingDots from './src/DemoContant/onboardingDots';
+import DemoScreen from './src/Basics/DiffClamp';
 
 
 const App = () => {
 
   return (
-    <BesicDecayAnimation />
+    <DemoScreen />
    
   );
 };
