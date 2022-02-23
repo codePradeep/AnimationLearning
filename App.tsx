@@ -21,12 +21,16 @@ import BesicDecayAnimation from './src/Basics/Decay';
 import PulltoRefresh from './src/DemoContant/Pulltorefresh';
 import OnboardingDots from './src/DemoContant/onboardingDots';
 import DemoScreen from './src/Basics/DiffClamp';
+import PanResponderAPi from './src/Animation API/PanResponder';
+import BesicstaggerAnimation from './src/Basics/stagger';
+import ButtonBinding from './src/DemoContant/ButtonBinding';
+import BesicsDelayAnimation from './src/Basics/delay';
 
 
 const App = () => {
 
   return (
-    <DemoScreen />
+    <BesicsDelayAnimation />
    
   );
 };
