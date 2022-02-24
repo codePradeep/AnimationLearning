@@ -25,12 +25,17 @@ import PanResponderAPi from './src/Animation API/PanResponder';
 import BesicstaggerAnimation from './src/Basics/stagger';
 import ButtonBinding from './src/DemoContant/ButtonBinding';
 import BesicsDelayAnimation from './src/Basics/delay';
+import BesicsLoopAnimation from './src/Basics/Loop';
+import SpiderAnimation from './src/DemoContant/SpiderAnimation';
+import EasingDemo from './src/Animation API/Easing';
+import PlatformDemo from './src/APIs/platform';
+import AnimatedFlatlist from './src/DemoContant/AnimatedFlatlist';
 
 
 const App = () => {
 
   return (
-    <BesicsDelayAnimation />
+    <AnimatedFlatlist />
    
   );
 };

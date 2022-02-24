@@ -4,6 +4,7 @@ import { Animated, Button, View, Text, PanResponder } from 'react-native';
 const HendlingGestures = () => {
 
     const position = new Animated.ValueXY({ x: 0, y: 0 })
+    const line = new Animated.ValueXY({ x: 0, y: 0 })
     // const position_new = new Animated.Value(0)
 
 
@@ -80,6 +81,7 @@ const HendlingGestures = () => {
                         },
 
                         { translateX: position.x },
+                        
                         { translateY: position.y },
                         { rotate: rotate }
                     ]
