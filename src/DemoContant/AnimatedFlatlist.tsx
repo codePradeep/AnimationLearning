@@ -46,7 +46,7 @@ export default function AnimatedFlatlist() {
                                 //     scale: Scale
                                 // },
                                 {
-                                    translateY: Offset
+                                    translateX: Offset
                                 }]
                         }}>
                             <View style={styles.surface}>

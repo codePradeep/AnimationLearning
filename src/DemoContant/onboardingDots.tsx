@@ -1,3 +1,4 @@
+import { transform } from '@babel/core';
 import React, { useRef } from 'react';
 import {
     View,
@@ -17,18 +18,27 @@ const OnboardingDots = () => {
     const { width: windowWidth, height: windowHeight } = Dimensions.get("screen");
 
     const scrollX = useRef(new Animated.Value(0)).current;
-    
- const imagebackground= Animated.createAnimatedComponent(ImageBackground)
 
+    //   const IB= Animated.createAnimatedComponent(ImageBackground)
+    
+
+    const rotate=scrollX.interpolate({
+        inputRange:[0,100],
+        outputRange:["0deg","90deg"]
+    })
+ 
 
     return (
         <SafeAreaView>
+            
             <ScrollView
                 horizontal
                 pagingEnabled
                 showsHorizontalScrollIndicator={false}
+               
                 onScroll={(e)=>scrollX.setValue(e.nativeEvent.contentOffset.x)}
-                >
+               
+               >
                 {Data.map((item, index) => {
                     return (
                         <View
@@ -52,17 +62,27 @@ const OnboardingDots = () => {
                 {Data.map((item, index) => {
                      const dots = scrollX.interpolate({
                                 inputRange: [  windowWidth *(index - 1), windowWidth * index, windowWidth * (index + 1)],
-                                outputRange: [10, 30, 10],
-                                 extrapolate: 'clamp',
+                                outputRange: [10, 50, 10],
+                                extrapolate: 'clamp',
                             },)
                     return (
                         <Animated.View 
                          key={index} 
+
                          style={[
                              styles.normalDot, 
-                             { width :dots,
-                            }]
-                            } />
+                             
+                             { width :dots,},
+                            
+                             {height:dots},
+                            { transform:[
+                                {rotate:rotate}
+                             ]
+                            }
+                            ]
+                            } >
+                                <Text>{index}</Text>
+                            </Animated.View>
                     );
                 })}
             </View>

@@ -30,12 +30,13 @@ import SpiderAnimation from './src/DemoContant/SpiderAnimation';
 import EasingDemo from './src/Animation API/Easing';
 import PlatformDemo from './src/APIs/platform';
 import AnimatedFlatlist from './src/DemoContant/AnimatedFlatlist';
+import AppStateExample from './src/APIs/AppState';
 
 
 const App = () => {
 
   return (
-    <AnimatedFlatlist />
+    <AppStateExample />
    
   );
 };
