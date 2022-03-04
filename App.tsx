@@ -31,12 +31,13 @@ import EasingDemo from './src/Animation API/Easing';
 import PlatformDemo from './src/APIs/platform';
 import AnimatedFlatlist from './src/DemoContant/AnimatedFlatlist';
 import AppStateExample from './src/APIs/AppState';
+import Googlemap from './src/DemoForBlog/Google Map';
 
 
 const App = () => {
 
   return (
-    <AppStateExample />
+    <Googlemap />
    
   );
 };
