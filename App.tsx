@@ -32,12 +32,14 @@ import PlatformDemo from './src/APIs/platform';
 import AnimatedFlatlist from './src/DemoContant/AnimatedFlatlist';
 import AppStateExample from './src/APIs/AppState';
 import Googlemap from './src/DemoForBlog/Google Map';
+import DeepLinkingDemo from './src/DemoForBlog/Deeplinking';
+import GoogleAutoComplete from './src/DemoForBlog/google places autocomplete';
 
 
 const App = () => {
 
   return (
-    <Googlemap />
+    <GoogleAutoComplete   />
    
   );
 };
