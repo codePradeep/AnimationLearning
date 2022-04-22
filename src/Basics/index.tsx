@@ -1,22 +1,6 @@
-// Image Mapper in React Native to Create Clickable Areas on Image
-// https://aboutreact.com/react-native-image-mapper/
-
-// Import React
 import React, { useState } from 'react';
-// Import Required Components
 import { View, Text, Alert, ImageBackgroundBase, ImageBackground, Image, Pressable } from 'react-native';
 import ImageMapper from '../Component/ImageMapper/ImageMapper';
-
-//Import ImageMapper Component
-
-
-const getRandomColor = () => {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (var i = 0; i < 6; i++)
-    color += letters[Math.floor(Math.random() * 16)];
-  return color;
-};
 
 const MapperApp = () => {
   
