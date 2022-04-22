@@ -9,17 +9,10 @@
  */
 
 import React from 'react';
-import Animation from './src/Basics';
-
+import MapperApp from './src/Basics';
 
 const App = () => {
-
-  return (
-    <Animation />
-   
-  );
+  return <MapperApp />;
 };
-
-
 
 export default App;
