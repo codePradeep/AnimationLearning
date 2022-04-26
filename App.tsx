@@ -9,13 +9,18 @@
  */
 
 import React from 'react';
-import Animation from './src/Basics';
+import LayoutAnimationDemo from './app/layoutAnimation';
+import Demoscreen from './app/layoutAnimation/Create';
+import CreateScreen from './app/layoutAnimation/Create';
+import PixelRatioDemo from './app/pixelRatio';
+import SysTraceDemo from './app/systrace';
+import WindowDimantion from './app/useWindowDimansion';
 
 
 const App = () => {
 
   return (
-    <Animation />
+    <WindowDimantion />
    
   );
 };
