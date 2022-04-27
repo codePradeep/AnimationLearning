@@ -36,7 +36,7 @@ import AppStateExample from './src/APIs/AppState';
 const App = () => {
 
   return (
-    <AppStateExample />
+    <AnimatedFlatlist />
    
   );
 };

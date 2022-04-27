@@ -7,8 +7,8 @@ export default function AnimatedFlatlist() {
     const scrollY = React.useRef(new Animated.Value(0)).current;
 
 
-    const spaccing = 20
-    const avatarsize = 70
+    const spaccing = 30
+    const avatarsize = 90
     const itemsize = avatarsize + spaccing + 3
 
 
@@ -42,16 +42,16 @@ export default function AnimatedFlatlist() {
                         <Animated.View style={{
                             opacity: Scale,
                             transform: [
-                                // {
-                                //     scale: Scale
-                                // },
+                                {
+                                    scale: Scale
+                                },
                                 {
                                     translateX: Offset
                                 }]
                         }}>
                             <View style={styles.surface}>
                                 <View style={{ flex: 0.3, justifyContent: "center" }}>
-                                    <Image source={{ uri: item.thumbnail }} style={{ height: 42, width: 42, alignSelf: "center" }}></Image>
+                                    <Image source={{ uri: item.thumbnail }} style={{ height: 80, width: 80, alignSelf: "center" }}></Image>
 
                                 </View>
                                 <View
