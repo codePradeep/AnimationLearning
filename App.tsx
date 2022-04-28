@@ -31,12 +31,16 @@ import EasingDemo from './src/Animation API/Easing';
 import PlatformDemo from './src/APIs/platform';
 import AnimatedFlatlist from './src/DemoContant/AnimatedFlatlist';
 import AppStateExample from './src/APIs/AppState';
+import PulltoAnimation from './src/DemoContant/lottie';
+import DemoCommonFormInput from './src/DemoContant/commonFormInput';
+import Newscreen from './src/DemoContant/lottie/new';
+import MyWebViewComponent from './src/DemoContant/WebView';
 
 
 const App = () => {
 
   return (
-    <AnimatedFlatlist />
+    <Newscreen />
    
   );
 };
