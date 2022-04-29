@@ -7,7 +7,7 @@ const MyWebViewComponent = () => {
 
     return (
         <View style={{ flex: 1 }}>
-            <WebView source={{ uri: 'https://www.marketcube.io/' }} />
+            <WebView source={{ uri: 'https://uat-ui.marketcube.io/' }} />
         </View>
     )
 }

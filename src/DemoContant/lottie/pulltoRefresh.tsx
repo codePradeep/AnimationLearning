@@ -1,12 +1,11 @@
-import React, { Children, useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Animated, Easing, PanResponder, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import LottieView from 'lottie-react-native';
 
 interface PullToRefreshProps{
     navigation:any
 }
-const PullToRefreshComponent=({component}:any)=>{
-
+const PullToRefreshComponent=(props:any)=>{
 
     const position = new Animated.Value(0)
   
@@ -90,11 +89,11 @@ const PullToRefreshComponent=({component}:any)=>{
                 { translateY: position },
               ]
             }}>
-            <ScrollView
+            {/* <ScrollView
             contentContainerStyle={styles.scrollviewcontainer}
-            >
-                {component}
-            </ScrollView>
+            > */}
+               {props.children}
+            {/* </ScrollView> */}
           </Animated.View>
         </View>
   

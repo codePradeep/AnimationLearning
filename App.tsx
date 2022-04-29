@@ -40,7 +40,7 @@ import MyWebViewComponent from './src/DemoContant/WebView';
 const App = () => {
 
   return (
-    <Newscreen />
+    <PulltoAnimation />
    
   );
 };
