@@ -24,7 +24,7 @@ const PulltoAnimation = () => {
 
     return (
         <SafeAreaView style={{ flex: 1, }}>
-            <PullToRefreshComponent >
+            <PullToRefreshComponent>
             <Text style={{
               width:395,
               textAlign:"center"}}>Swipe down to see Animation</Text>

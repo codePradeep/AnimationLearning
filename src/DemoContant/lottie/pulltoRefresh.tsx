@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from "react";
+import React, { ComponentType, useCallback, useState } from "react";
 import { Animated, Easing, PanResponder, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import LottieView from 'lottie-react-native';
 
 interface PullToRefreshProps{
-    navigation:any
+    children:any
 }
-const PullToRefreshComponent=(props:any)=>{
+const PullToRefreshComponent=(props:PullToRefreshProps)=>{
 
     const position = new Animated.Value(0)
   
@@ -35,9 +35,7 @@ const PullToRefreshComponent=(props:any)=>{
         if (gesture.dy > 200) {
           loadMore()
         }
-  
       },
-  
       onPanResponderRelease: () => {
         Animated.spring(position, {
           toValue: 0,
@@ -46,7 +44,6 @@ const PullToRefreshComponent=(props:any)=>{
       }
     })
   
-    
     Animated.sequence([
       Animated.timing(animatedValue, {
         toValue: 1,
@@ -65,10 +62,8 @@ const PullToRefreshComponent=(props:any)=>{
     return (
       <SafeAreaView style={{ flex: 1, }}>
         <View style={{
-          backgroundColor: "skyblue",
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center"
+          backgroundColor: "white",
+          flex: 1
         }}>
           {loading && 
               <LottieView source={require('./animation.json')} 
@@ -80,8 +75,6 @@ const PullToRefreshComponent=(props:any)=>{
               loop 
               />
             }
-  
-  
           <Animated.View
             {...pan.panHandlers}
             style={{
@@ -89,11 +82,7 @@ const PullToRefreshComponent=(props:any)=>{
                 { translateY: position },
               ]
             }}>
-            {/* <ScrollView
-            contentContainerStyle={styles.scrollviewcontainer}
-            > */}
                {props.children}
-            {/* </ScrollView> */}
           </Animated.View>
         </View>
   
