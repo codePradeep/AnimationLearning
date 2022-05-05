@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "493666658610",
+    "project_id": "animationlearning-e71cd",
+    "storage_bucket": "animationlearning-e71cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493666658610:android:5502f8b151b5c827070f2b",
+        "android_client_info": {
+          "package_name": "com.animationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493666658610-r476h5ij7smcvjpbeggkm01uu1shkapp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.animationapp",
+            "certificate_hash": "899455048fd0205ed6cb8076d238e62fce33e939"
+          }
+        },
+        {
+          "client_id": "493666658610-34i23980g8g4lcp7do1nqtll07kftj2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv35gZukHgLak4qPofbiURVlMvBgEKdIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493666658610-34i23980g8g4lcp7do1nqtll07kftj2n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

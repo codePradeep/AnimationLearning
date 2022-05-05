@@ -10,12 +10,13 @@
 
 import React from 'react';
 import Animation from './src/Basics';
+import RealtimeDatabse from './src/realtimeDatabse';
 
 
 const App = () => {
 
   return (
-    <Animation />
+    <RealtimeDatabse />
    
   );
 };
