@@ -10,13 +10,14 @@
 
 import React from 'react';
 import Animation from './src/Basics';
+import FirestoreDatabase from './src/FirestoreDatabase';
 import RealtimeDatabse from './src/realtimeDatabse';
 
 
 const App = () => {
 
   return (
-    <RealtimeDatabse />
+    <FirestoreDatabase />
    
   );
 };
