@@ -9,13 +9,14 @@
  */
 
 import React from 'react';
-import Animation from './src/Basics';
+import Routes from './app/routes';
+
 
 
 const App = () => {
 
   return (
-    <Animation />
+    <Routes />
    
   );
 };
