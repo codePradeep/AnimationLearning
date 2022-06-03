@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import { ScreenColor } from '../../config';
 
 const width=Dimensions.get('screen').width
 const height=Dimensions.get('screen').height
@@ -7,7 +8,7 @@ const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
    padding:20,
-    backgroundColor:"black"
+    backgroundColor:ScreenColor.BACKGROUND_COLOR
     
   },
   animationstyle:{
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
   },
   confirmCaseContainer: {
     flexDirection: 'row',
-    backgroundColor: 'rgba(255,255,255,0.1)',
+    backgroundColor: 'rgba(1,1,1,0.5)',
     
     padding: 20,
     justifyContent: 'space-around',
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
   },
   headingStyle: {
     fontSize: 28,
-    color: 'white',
+    color: 'black',
     fontWeight:"800",
     fontVariant: ['small-caps'],
     alignSelf:"center",
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
   },
   countryButton: {
     padding: 10,
-    backgroundColor: 'gray',
+    backgroundColor: 'rgba(1,1,1,0.5)',
     alignItems: 'center',
   },
 });

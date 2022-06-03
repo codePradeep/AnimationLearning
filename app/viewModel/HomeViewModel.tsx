@@ -1,23 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import {View} from 'react-native';
 import HomeScreen from '../view/home/HomeScreen';
-import axios from 'axios';
 import {sendGetRequest} from '../network';
-import {GlobleDataTypes} from '../models';
-import { GlobleData } from '../models/GlobleDataypes';
-interface HomeViewModelprops {
-  navigation: any;
-}
+import {GlobleDataTypes, NavigationDataProp} from '../models';
+import {GlobleData} from '../models/GlobleDataypes';
 
-const HomeViewModel = (props: HomeViewModelprops) => {
+const HomeViewModel = (props: NavigationDataProp) => {
   const {navigation} = props;
   const [data, setData] = useState<GlobleData>();
- 
+
   const [showLoading, setShowLoading] = useState(true);
 
   const getglobleData = async () => {
     // let url = 'https://covid19.mathdro.id/api';
-    let url="https://coronavirus-19-api.herokuapp.com/all";
+    let url = 'https://coronavirus-19-api.herokuapp.com/all';
     let response = await sendGetRequest(url);
     if (response != 'error') {
       setData(response.data);
@@ -29,14 +24,11 @@ const HomeViewModel = (props: HomeViewModelprops) => {
     getglobleData();
   }, []);
 
-
- 
-
   return (
     <HomeScreen
       {...{
         navigation,
-        data
+        data,
       }}
     />
   );

@@ -1,5 +1,9 @@
 import HomeViewModel from "./HomeViewModel";
+import CountryViewModel from "./CountryViewModel";
+import CountryListViewModel from "./CountryListViewModel";
 
-export default {
-    HomeViewModel
+export  {
+    HomeViewModel,
+    CountryListViewModel,
+    CountryViewModel
 }

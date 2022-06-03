@@ -7,6 +7,7 @@ import LottieView from 'lottie-react-native';
 import {animation} from '../../config/Animation';
 import ProgressChart from 'react-native-chart-kit/dist/ProgressChart';
 import PieChart from 'react-native-chart-kit/dist/PieChart';
+import { NavigationScreen } from '../../config';
 
 
 interface HomeScreenprops {
@@ -24,7 +25,7 @@ const HomeScreen = (props: HomeScreenprops) => {
       name: 'Deaths',
       population: data?.deaths,
       color: '#F00',
-      legendFontColor: 'white',
+      legendFontColor: 'black',
       legendFontSize: 22,
       
     },
@@ -32,19 +33,26 @@ const HomeScreen = (props: HomeScreenprops) => {
       name: 'Recoverd',
       population: data?.recovered,
       color: 'green',
-      legendFontColor: 'white',
+      legendFontColor: 'black',
+      legendFontSize: 22,
+    },
+    {
+      name: 'Confirm Cases',
+      population: data?.cases,
+      color: 'blue',
+      legendFontColor: 'black',
       legendFontSize: 22,
     },
     
   ];
   return (
     <View style={styles.MainContainer}>
-      <LottieView
+      {/* <LottieView
         source={require('../../assets/animation/background.json')}
         autoPlay
         loop
         style={styles.animationstyle}
-      />
+      /> */}
 
       <View style={styles.subContainer}>
         <Text style={styles.headingStyle}>Covid-19 Globle Report</Text>
@@ -97,9 +105,9 @@ const HomeScreen = (props: HomeScreenprops) => {
         />
       </View>
       <TouchableOpacity
-        onPress={() => navigation.navigate('Country')}
+        onPress={() => navigation.navigate(NavigationScreen.COUNTRY_VIEW_MODEL)}
         style={styles.countryButton}>
-        <Text>Country</Text>
+        <Text style={[styles.valueStyle,{color:"black"}]}>Country</Text>
       </TouchableOpacity>
     </View>
   );
