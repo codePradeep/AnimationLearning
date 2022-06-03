@@ -87,7 +87,7 @@ const HomeScreen = (props: HomeScreenprops) => {
           }}
           hideLegend={false}
         /> */}
-        <PieChart
+        {/* <PieChart
           data={pieChartData}
           height={200}
           width={350}
@@ -102,10 +102,10 @@ const HomeScreen = (props: HomeScreenprops) => {
           }}
           accessor="population"
           style={{paddingRight:0}}
-        />
+        /> */}
       </View>
       <TouchableOpacity
-        onPress={() => navigation.navigate(NavigationScreen.COUNTRY_VIEW_MODEL)}
+        onPress={() => navigation.navigate(NavigationScreen.COUNTRYLIST_VIEW_MODEL)}
         style={styles.countryButton}>
         <Text style={[styles.valueStyle,{color:"black"}]}>Country</Text>
       </TouchableOpacity>
