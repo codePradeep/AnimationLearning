@@ -10,6 +10,8 @@ import {
 import database, {firebase} from '@react-native-firebase/database';
 
 const RealtimeDatabse = () => {
+
+  
   const reference = database().ref('/users');
 
   //   realtime data chenge updates
