@@ -9,13 +9,13 @@
  */
 
 import React from 'react';
-import Animation from './src/Basics';
+import QRCodeScreen from './src/qrCode';
 
 
 const App = () => {
 
   return (
-    <Animation />
+    <QRCodeScreen />
    
   );
 };
