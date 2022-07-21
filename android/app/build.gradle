@@ -1,5 +1,6 @@
 apply plugin: "com.android.application"
 apply plugin: 'com.google.gms.google-services' //ADDED THIS LINE FOR FIRRBASE CONFIG
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle" //ADDED THIS LINE FOR THE VECTOR ICON
 import com.android.build.OutputFile
 
 /**
@@ -129,7 +130,10 @@ android {
     ndkVersion rootProject.ext.ndkVersion
 
     compileSdkVersion rootProject.ext.compileSdkVersion
-
+compileOptions {
+	sourceCompatibility JavaVersion.VERSION_1_8
+	targetCompatibility JavaVersion.VERSION_1_8
+}
     defaultConfig {
         applicationId "com.animationapp"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -149,7 +153,7 @@ android {
         debug {
             storeFile file('newkey.keystore')
             storePassword '123456'
-            keyAlias 'newkeyalias'
+            keyAlias 'androidnewkey'
             keyPassword '123456'
         }
     }

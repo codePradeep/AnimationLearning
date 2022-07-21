@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "493666658610",
+    "firebase_url": "https://animationlearning-e71cd-default-rtdb.firebaseio.com",
     "project_id": "animationlearning-e71cd",
     "storage_bucket": "animationlearning-e71cd.appspot.com"
   },
@@ -14,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "493666658610-r476h5ij7smcvjpbeggkm01uu1shkapp.apps.googleusercontent.com",
+          "client_id": "493666658610-77l95c6advvgugak3h63c9si2uc6620s.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.animationapp",
-            "certificate_hash": "899455048fd0205ed6cb8076d238e62fce33e939"
+            "certificate_hash": "b05132a71c140ce04e6506a0063dfdcbf6d8b669"
           }
         },
         {
