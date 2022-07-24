@@ -7,7 +7,7 @@ import {
   RTCSessionDescription,
 } from 'react-native-webrtc';
 import VideoScreen from './src/Component/Video';
-import {View} from 'react-native';
+import {Text, View} from 'react-native';
 import CommonButton from './src/Component/Button';
 import Utils from './src/Component/utils';
 import firestore, {
@@ -211,6 +211,8 @@ const App = () => {
   //display the call button
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{color:"black",
+    marginBottom:20}}> Press on Video Button for Call</Text>
       <CommonButton
         onPress={() => create()}
         iconName={'video'}
